@@ -26,13 +26,20 @@ body {
 	width: 100%;
 }
 
+.topnav {
+	background: var(--color-red-400);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .strat {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5em;
 	justify-content: center;
 	align-items: center;
-	width: 70ch;
+	max-width: 50em;
 }
 
 .strat h2 {

@@ -7,7 +7,7 @@ const Strat = props => {
 	const [stratDescription, setStratDescription] = useState('')
 
 	return (
-		<div class='strat'>
+		<div className='strat'>
 			<h2>{title}</h2>
 			<p>{description}</p>
 		</div>
