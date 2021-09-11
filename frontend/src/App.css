@@ -16,7 +16,25 @@
 	--color-white-200: #f6f6f6;
 }
 
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
 #root {
 	background: var(--color-blue-700);
 	color: var(--color-white-200);
+	width: 100%;
+}
+
+.strat {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	justify-content: center;
+	align-items: center;
+	width: 70ch;
+}
+
+.strat h2 {
+	font-size: 2rem;
 }

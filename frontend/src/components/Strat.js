@@ -3,10 +3,13 @@ import { useState } from 'react'
 const Strat = props => {
 	const { title, description } = props
 
+	const [stratTitle, setStratTitle] = useState('')
+	const [stratDescription, setStratDescription] = useState('')
+
 	return (
-		<div>
+		<div class='strat'>
 			<h2>{title}</h2>
-			<h4>{description}</h4>
+			<p>{description}</p>
 		</div>
 	)
 }
