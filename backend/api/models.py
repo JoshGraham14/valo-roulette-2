@@ -31,7 +31,7 @@ class Strat(models.Model):
     ]
 
     title = models.CharField(max_length=255, unique=True)
-    content = models.TextField()
+    description = models.TextField()
     team = models.CharField(max_length=1, choices=TEAMS, default=BOTH_TEAMS)
     map_name = models.CharField(max_length=2, choices=MAPS, default=ALL_MAPS)
 
