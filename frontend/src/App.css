@@ -18,19 +18,36 @@
 
 body {
 	font-family: 'Poppins', sans-serif;
+	background: var(--color-blue-700);
+	color: var(--color-white-200);
 }
 
 #root {
-	background: var(--color-blue-700);
-	color: var(--color-white-200);
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2em;
 }
 
 .topnav {
 	background: var(--color-red-400);
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.map-cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2em;
+	margin-top: 1em;
+}
+
+.team-selection {
+	display: flex;
+	gap: 2em;
 }
 
 .strat {
@@ -44,4 +61,26 @@ body {
 
 .strat h2 {
 	font-size: 2rem;
+}
+
+button {
+	padding: 0.5em 1.5em;
+	font-size: 1.25rem;
+	font-weight: bold;
+	border-radius: 0.5em;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+.strat-btn {
+	background: none;
+	border: 0.25em solid var(--color-red-400);
+	color: var(--color-red-400);
+}
+
+.strat-btn:hover {
+	background: var(--color-red-200);
+	color: var(--color-blue-700);
 }

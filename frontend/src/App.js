@@ -2,6 +2,7 @@ import './App.css'
 import React, { useState, useEffect } from 'react'
 import Strat from './components/Strat'
 import Nav from './components/Nav'
+import SelectionForm from './components/SelectionForm'
 
 import axios from 'axios'
 import _ from 'lodash'
@@ -27,7 +28,8 @@ const App = () => {
 	return (
 		<>
 			<Nav />
-			{allStrats}
+			<SelectionForm />
+			{allStrats[0]}
 		</>
 	)
 }
