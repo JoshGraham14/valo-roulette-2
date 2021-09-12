@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 
 const Strat = props => {
 	const { title, description } = props
 
-	const [stratTitle, setStratTitle] = useState('')
-	const [stratDescription, setStratDescription] = useState('')
+	// const [stratTitle, setStratTitle] = useState('')
+	// const [stratDescription, setStratDescription] = useState('')
 
-	useEffect(() => {
-		setStratTitle(title)
-		setStratDescription(description)
-	}, [])
+	// useEffect(() => {
+	// 	setStratTitle(title)
+	// 	setStratDescription(description)
+	// }, [])
 
 	return (
 		<div className='strat'>

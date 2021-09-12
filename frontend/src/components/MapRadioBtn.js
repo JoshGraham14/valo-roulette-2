@@ -1,5 +1,10 @@
-const mapRadioBtn = props => {
-	const { mapName, mapAbbr } = props
+const MapRadioBtn = props => {
+	const { mapName, mapAbbr, checked, onChange } = props
+
+	const handleMapChange = e => {
+		onChange(e)
+	}
+
 	return (
 		<>
 			<input
@@ -7,6 +12,8 @@ const mapRadioBtn = props => {
 				name='map-group'
 				value={mapAbbr}
 				id={`map-${mapName}`}
+				checked={checked}
+				onChange={handleMapChange}
 			></input>
 			<label className='map-card' htmlFor={`map-${mapName}`}>
 				{/* capitalize the first letter of the map name */}
@@ -16,4 +23,4 @@ const mapRadioBtn = props => {
 	)
 }
 
-export default mapRadioBtn
+export default MapRadioBtn

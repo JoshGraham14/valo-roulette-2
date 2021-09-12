@@ -1,5 +1,10 @@
 const TeamSelectBtn = props => {
-	const { team } = props
+	const { team, checked, onChange } = props
+
+	const handleTeamChange = e => {
+		onChange(e)
+	}
+
 	return (
 		<>
 			<input
@@ -7,6 +12,8 @@ const TeamSelectBtn = props => {
 				name='team-group'
 				value={team === 'attackers' ? 'A' : 'D'}
 				id={`team-${team}`}
+				checked={checked}
+				onChange={handleTeamChange}
 			></input>
 			<label className={`team-card ${team}`} htmlFor={`team-${team}`}>
 				{/* capitalize the first letter of the team name */}
