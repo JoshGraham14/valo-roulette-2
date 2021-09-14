@@ -20,13 +20,12 @@ const App = () => {
 	}, [])
 
 	useEffect(() => {
-		setCurrentStrats(filterStrats)
-		console.log(currentStrats)
+		setCurrentStrats(filterStrats())
 	}, [mapName, team])
 
 	const filterStrats = () => {
-		let strats = currentStrats
-		strats.filter(strat => {
+		let strats = allStrats
+		let selectedStrats = strats.filter(strat => {
 			return (
 				(strat.map_name === mapName && strat.team === team) ||
 				(strat.map_name === 'AL' && strat.team === team) ||
@@ -34,7 +33,8 @@ const App = () => {
 				(strat.map_name === 'AL' && strat.team === 'B')
 			)
 		})
-		return strats
+		setCurrentStrats(selectedStrats)
+		return selectedStrats
 	}
 
 	/**
@@ -44,7 +44,6 @@ const App = () => {
 	 */
 	const handleMapChange = newMap => {
 		setMapName(newMap)
-		setCurrentStrats(allStrats)
 	}
 
 	/**
@@ -54,7 +53,6 @@ const App = () => {
 	 */
 	const handleTeamChange = newTeam => {
 		setTeam(newTeam)
-		setCurrentStrats(allStrats)
 	}
 
 	return (
@@ -64,6 +62,15 @@ const App = () => {
 				onMapChange={handleMapChange}
 				onTeamChange={handleTeamChange}
 			/>
+			{currentStrats.map((strat, index) => {
+				return (
+					<Strat
+						title={strat.title}
+						description={strat.description}
+						key={index}
+					/>
+				)
+			})}
 		</>
 	)
 }
