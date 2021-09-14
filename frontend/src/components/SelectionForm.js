@@ -4,6 +4,7 @@ import MapRadioBtn from './MapRadioBtn'
 import TeamSelectBtn from './TeamSelectBtn'
 
 const SelectionForm = props => {
+	const { onMapChange, onTeamChange } = props
 	const [currentMap, setCurrentMap] = useState('BI')
 	const [currentTeam, setCurrentTeam] = useState('A')
 
@@ -13,10 +14,12 @@ const SelectionForm = props => {
 
 	const handleRadioChange = e => {
 		setCurrentMap(e.target.value)
+		onMapChange(e.target.value)
 	}
 
 	const handleTeamChange = e => {
 		setCurrentTeam(e.target.value)
+		onTeamChange(e.target.value)
 	}
 
 	const handleClick = e => {
@@ -26,7 +29,7 @@ const SelectionForm = props => {
 
 	return (
 		<>
-			<div className='map-cards' onChange={handleRadioChange}>
+			<div className='map-cards'>
 				<MapRadioBtn
 					mapName='bind'
 					mapAbbr='BI'
@@ -65,7 +68,7 @@ const SelectionForm = props => {
 				/>
 			</div>
 
-			<div className='team-selection' onChange={handleTeamChange}>
+			<div className='team-selection'>
 				<TeamSelectBtn
 					team='attackers'
 					checked={currentTeam === 'A'}
