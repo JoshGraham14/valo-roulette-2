@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import MapRadioBtn from './MapRadioBtn'
 import TeamSelectBtn from './TeamSelectBtn'
@@ -7,10 +7,6 @@ const SelectionForm = props => {
 	const { onMapChange, onTeamChange } = props
 	const [currentMap, setCurrentMap] = useState('BI')
 	const [currentTeam, setCurrentTeam] = useState('A')
-
-	useEffect(() => {
-		console.log(`currentMap: ${currentMap} and currentTeam: ${currentTeam}`)
-	}, [currentMap, currentTeam])
 
 	const handleRadioChange = e => {
 		setCurrentMap(e.target.value)
