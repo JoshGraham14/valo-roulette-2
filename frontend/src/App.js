@@ -12,6 +12,9 @@ const App = () => {
 	const [mapName, setMapName] = useState('BI')
 	const [team, setTeam] = useState('A')
 
+	/**
+	 * Make a get request to retrieve all strategies from the database on mount.
+	 */
 	useEffect(() => {
 		axios.get('http://127.0.0.1:8000/api/strats/').then(response => {
 			setAllStrats(response.data)
@@ -19,10 +22,18 @@ const App = () => {
 		})
 	}, [])
 
+	/**
+	 * Refilter the current strats whenever the map or team changes.
+	 */
 	useEffect(() => {
 		setCurrentStrats(filterStrats())
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [mapName, team])
 
+	/**
+	 * Filter the array of allStrats based on the map and team chosen
+	 * @returns a filtered array of strats.
+	 */
 	const filterStrats = () => {
 		let strats = allStrats
 		let selectedStrats = strats.filter(strat => {
