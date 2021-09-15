@@ -3,12 +3,14 @@ import React, { useState, useEffect } from 'react'
 import Strat from './components/Strat'
 import Nav from './components/Nav'
 import SelectionForm from './components/SelectionForm'
+import { shuffle } from './helperFunctions'
 
 import axios from 'axios'
 
 const App = () => {
 	const [allStrats, setAllStrats] = useState([])
 	const [currentStrats, setCurrentStrats] = useState([])
+	const [strat, setStrat] = useState({})
 	const [mapName, setMapName] = useState('BI')
 	const [team, setTeam] = useState('A')
 
@@ -44,7 +46,9 @@ const App = () => {
 				(strat.map_name === 'AL' && strat.team === 'B')
 			)
 		})
-		setCurrentStrats(selectedStrats)
+		shuffle(selectedStrats)
+		//setCurrentStrats(selectedStrats)
+
 		return selectedStrats
 	}
 
@@ -66,22 +70,32 @@ const App = () => {
 		setTeam(newTeam)
 	}
 
+	const handleClick = () => {
+		console.log(`currentStrats = ${currentStrats.length}`)
+		if (currentStrats.length === 1) {
+			console.log('made it in if statement')
+			setCurrentStrats(filterStrats())
+		}
+		console.log(currentStrats[0])
+		setStrat(currentStrats[0])
+		let newCurrentStrats = currentStrats
+		const oldStrat = newCurrentStrats.shift()
+		newCurrentStrats.push(oldStrat)
+		setCurrentStrats(newCurrentStrats)
+	}
+
 	return (
 		<>
 			<Nav />
 			<SelectionForm
 				onMapChange={handleMapChange}
 				onTeamChange={handleTeamChange}
+				onBtnClick={handleClick}
 			/>
-			{currentStrats.map((strat, index) => {
-				return (
-					<Strat
-						title={strat.title}
-						description={strat.description}
-						key={index}
-					/>
-				)
-			})}
+			<Strat
+				title={strat !== undefined ? strat.title : ''}
+				description={strat !== undefined ? strat.description : ''}
+			/>
 		</>
 	)
 }

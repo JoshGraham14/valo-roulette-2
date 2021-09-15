@@ -4,7 +4,7 @@ import MapRadioBtn from './MapRadioBtn'
 import TeamSelectBtn from './TeamSelectBtn'
 
 const SelectionForm = props => {
-	const { onMapChange, onTeamChange } = props
+	const { onMapChange, onTeamChange, onBtnClick } = props
 	const [currentMap, setCurrentMap] = useState('BI')
 	const [currentTeam, setCurrentTeam] = useState('A')
 
@@ -20,7 +20,7 @@ const SelectionForm = props => {
 
 	const handleClick = e => {
 		e.preventDefault()
-		console.log('button clicked')
+		onBtnClick()
 	}
 
 	return (
