@@ -27,6 +27,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	gap: 2em;
 }
 
@@ -41,13 +42,90 @@ body {
 .map-cards {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 	gap: 2em;
 	margin-top: 1em;
 }
 
+/* Hides radio button, leaving just the card */
+.map-cards input[type='radio'] {
+	display: none;
+}
+
+.map-cards input[type='radio']:checked + .map-card {
+	box-shadow: 0rem 0rem 1rem 0.25rem var(--color-white-200);
+}
+
+.map-card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 13.5em;
+	height: 9em;
+	background: var(--color-blue-700);
+	overflow: hidden;
+	position: relative;
+}
+
+.map-card:hover,
+.map-card:active,
+.map-card:focus {
+	border: 0.25em solid var(--color-red-400);
+	cursor: pointer;
+}
+
+.map-card h1 {
+	position: absolute;
+	font-size: 3rem;
+}
+
+.map-image {
+	height: 9em;
+	object-fit: cover;
+	opacity: 0.8;
+}
+
 .team-selection {
 	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 	gap: 2em;
+	margin-bottom: 2em;
+	margin-top: 2em;
+}
+
+.team-card {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 6em;
+	height: 2em;
+	font-size: 2rem;
+}
+
+.attackers {
+	background: var(--color-red-400);
+}
+
+.defenders {
+	background: rgb(91, 91, 255);
+}
+
+.team-card:hover,
+.team-card:active,
+.team-card:focus {
+	border: 0.1em solid var(--color-white-200);
+	cursor: pointer;
+}
+
+/* Hides radio button, leaving just the card */
+.team-selection input[type='radio'] {
+	display: none;
+}
+
+.team-selection input[type='radio']:checked + .team-card {
+	box-shadow: 0rem 0rem 1rem 0.25rem var(--color-white-200);
 }
 
 .strat {
