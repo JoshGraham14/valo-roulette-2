@@ -40,7 +40,6 @@ const App = () => {
 			)
 		})
 		shuffle(selectedStrats)
-		console.log(selectedStrats)
 		return selectedStrats
 	}
 

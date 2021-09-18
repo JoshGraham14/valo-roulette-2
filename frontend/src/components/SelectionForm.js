@@ -3,6 +3,13 @@ import { useState } from 'react'
 import MapRadioBtn from './MapRadioBtn'
 import TeamSelectBtn from './TeamSelectBtn'
 
+import bindImg from '../img/bind-map.png'
+import havenImg from '../img/haven-map.png'
+import splitImg from '../img/split-map.png'
+import ascentImg from '../img/ascent-map.png'
+import iceboxImg from '../img/icebox-map.png'
+import breezeImg from '../img/breeze-map.png'
+
 const SelectionForm = props => {
 	const { onMapChange, onTeamChange, onBtnClick } = props
 	const [currentMap, setCurrentMap] = useState('BI')
@@ -31,36 +38,42 @@ const SelectionForm = props => {
 					mapAbbr='BI'
 					checked={currentMap === 'BI'}
 					onChange={handleRadioChange}
+					imgSrc={bindImg}
 				/>
 				<MapRadioBtn
 					mapName='haven'
 					mapAbbr='HA'
 					checked={currentMap === 'HA'}
 					onChange={handleRadioChange}
+					imgSrc={havenImg}
 				/>
 				<MapRadioBtn
 					mapName='split'
 					mapAbbr='SP'
 					checked={currentMap === 'SP'}
 					onChange={handleRadioChange}
+					imgSrc={splitImg}
 				/>
 				<MapRadioBtn
 					mapName='ascent'
 					mapAbbr='AS'
 					checked={currentMap === 'AS'}
 					onChange={handleRadioChange}
+					imgSrc={ascentImg}
 				/>
 				<MapRadioBtn
 					mapName='icebox'
 					mapAbbr='IC'
 					checked={currentMap === 'IC'}
 					onChange={handleRadioChange}
+					imgSrc={iceboxImg}
 				/>
 				<MapRadioBtn
 					mapName='breeze'
 					mapAbbr='BR'
 					checked={currentMap === 'BR'}
 					onChange={handleRadioChange}
+					imgSrc={breezeImg}
 				/>
 			</div>
 
