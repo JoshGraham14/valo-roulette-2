@@ -37,6 +37,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 
 .map-cards {
@@ -66,6 +67,7 @@ body {
 	background: var(--color-blue-700);
 	overflow: hidden;
 	position: relative;
+	border-radius: 1em;
 }
 
 .map-card:hover,
@@ -102,6 +104,7 @@ body {
 	width: 6em;
 	height: 2em;
 	font-size: 2rem;
+	border-radius: 0.5em;
 }
 
 .attackers {
@@ -135,10 +138,14 @@ body {
 	justify-content: center;
 	align-items: center;
 	max-width: 50em;
+	margin-left: 2em;
+	margin-right: 2em;
+	margin-bottom: 2em;
 }
 
 .strat h2 {
 	font-size: 2rem;
+	text-align: center;
 }
 
 .strat p {
