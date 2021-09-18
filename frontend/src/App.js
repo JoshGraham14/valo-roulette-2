@@ -22,15 +22,8 @@ const App = () => {
 			setAllStrats(response.data)
 			setCurrentStrats(response.data)
 		})
-	}, [])
-
-	/**
-	 * Refilter the current strats whenever the map or team changes.
-	 */
-	useEffect(() => {
-		setCurrentStrats(filterStrats())
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [mapName, team])
+	}, [])
 
 	/**
 	 * Filter the array of allStrats based on the map and team chosen
@@ -47,10 +40,17 @@ const App = () => {
 			)
 		})
 		shuffle(selectedStrats)
-		//setCurrentStrats(selectedStrats)
-
+		console.log(selectedStrats)
 		return selectedStrats
 	}
+
+	/**
+	 * Refilter the current strats whenever the map or team changes.
+	 */
+	useEffect(() => {
+		setCurrentStrats(filterStrats())
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [mapName, team])
 
 	/**
 	 * Sets the state for the current selected map. This function will be called from
@@ -71,12 +71,10 @@ const App = () => {
 	}
 
 	const handleClick = () => {
-		console.log(`currentStrats = ${currentStrats.length}`)
-		if (currentStrats.length === 1) {
-			console.log('made it in if statement')
-			setCurrentStrats(filterStrats())
+		if (currentStrats.length === allStrats.length) {
+			console.log('this needs to be fixed')
 		}
-		console.log(currentStrats[0])
+		console.log(currentStrats)
 		setStrat(currentStrats[0])
 		let newCurrentStrats = currentStrats
 		const oldStrat = newCurrentStrats.shift()
@@ -92,10 +90,7 @@ const App = () => {
 				onTeamChange={handleTeamChange}
 				onBtnClick={handleClick}
 			/>
-			<Strat
-				title={strat !== undefined ? strat.title : ''}
-				description={strat !== undefined ? strat.description : ''}
-			/>
+			<Strat title={strat.title} description={strat.description} />
 		</>
 	)
 }

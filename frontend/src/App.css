@@ -63,6 +63,10 @@ body {
 	font-size: 2rem;
 }
 
+.strat p {
+	text-align: center;
+}
+
 button {
 	padding: 0.5em 1.5em;
 	font-size: 1.25rem;
