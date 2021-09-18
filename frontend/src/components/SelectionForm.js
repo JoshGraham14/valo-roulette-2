@@ -20,7 +20,7 @@ const SelectionForm = props => {
 	 * component as well as the parent component (App.js).
 	 * @param {*} e - event object.
 	 */
-	const handleRadioChange = e => {
+	const handleMapChange = e => {
 		setCurrentMap(e.target.value)
 		onMapChange(e.target.value)
 	}
@@ -53,42 +53,42 @@ const SelectionForm = props => {
 					mapName='bind'
 					mapAbbr='BI'
 					checked={currentMap === 'BI'}
-					onChange={handleRadioChange}
+					onChange={handleMapChange}
 					imgSrc={bindImg}
 				/>
 				<MapRadioBtn
 					mapName='haven'
 					mapAbbr='HA'
 					checked={currentMap === 'HA'}
-					onChange={handleRadioChange}
+					onChange={handleMapChange}
 					imgSrc={havenImg}
 				/>
 				<MapRadioBtn
 					mapName='split'
 					mapAbbr='SP'
 					checked={currentMap === 'SP'}
-					onChange={handleRadioChange}
+					onChange={handleMapChange}
 					imgSrc={splitImg}
 				/>
 				<MapRadioBtn
 					mapName='ascent'
 					mapAbbr='AS'
 					checked={currentMap === 'AS'}
-					onChange={handleRadioChange}
+					onChange={handleMapChange}
 					imgSrc={ascentImg}
 				/>
 				<MapRadioBtn
 					mapName='icebox'
 					mapAbbr='IC'
 					checked={currentMap === 'IC'}
-					onChange={handleRadioChange}
+					onChange={handleMapChange}
 					imgSrc={iceboxImg}
 				/>
 				<MapRadioBtn
 					mapName='breeze'
 					mapAbbr='BR'
 					checked={currentMap === 'BR'}
-					onChange={handleRadioChange}
+					onChange={handleMapChange}
 					imgSrc={breezeImg}
 				/>
 			</div>
