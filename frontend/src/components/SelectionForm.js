@@ -15,16 +15,32 @@ const SelectionForm = props => {
 	const [currentMap, setCurrentMap] = useState('BI')
 	const [currentTeam, setCurrentTeam] = useState('A')
 
+	/**
+	 * Handles when a new map has been selected by setting the state of this
+	 * component as well as the parent component (App.js).
+	 * @param {*} e - event object.
+	 */
 	const handleRadioChange = e => {
 		setCurrentMap(e.target.value)
 		onMapChange(e.target.value)
 	}
 
+	/**
+	 * Handles when a new team has been selected by setting the state of this
+	 * component as well as the parent component (App.js).
+	 * @param {*} e - event object.
+	 */
 	const handleTeamChange = e => {
 		setCurrentTeam(e.target.value)
 		onTeamChange(e.target.value)
 	}
 
+	/**
+	 * Handles when the 'Generate Strat' button has been clicked. This function calls
+	 * onBtnClick() which is a prop sent from App.js which will call handleClick in
+	 * App.js.
+	 * @param {*} e - event object.
+	 */
 	const handleClick = e => {
 		e.preventDefault()
 		onBtnClick()

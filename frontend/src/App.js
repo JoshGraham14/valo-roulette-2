@@ -69,6 +69,10 @@ const App = () => {
 		setTeam(newTeam)
 	}
 
+	/**
+	 * Handles the click of the 'Generate Strat' button. By selecting the first strat
+	 * and shifting the order of the currentStrats array.
+	 */
 	const handleClick = () => {
 		if (currentStrats.length === allStrats.length) {
 			console.log('this needs to be fixed')
