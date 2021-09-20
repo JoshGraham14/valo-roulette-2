@@ -1,5 +1,11 @@
 const MapRadioBtn = props => {
 	const { mapName, mapAbbr, checked, onChange, imgSrc } = props
+
+	/**
+	 * When a new map is selected, the handleMapChange function from the
+	 * SelectionForm component is called.
+	 * @param {*} e - event object.
+	 */
 	const handleMapChange = e => {
 		onChange(e)
 	}

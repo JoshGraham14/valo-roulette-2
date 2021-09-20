@@ -1,6 +1,11 @@
 const TeamSelectBtn = props => {
 	const { team, checked, onChange } = props
 
+	/**
+	 * When a new team is selected, the handleTeamChange function from the
+	 * SelectionForm component is called.
+	 * @param {*} e - event object.
+	 */
 	const handleTeamChange = e => {
 		onChange(e)
 	}
